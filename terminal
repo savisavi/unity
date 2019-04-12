@@ -1,0 +1,71 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Hacker : MonoBehaviour
+{
+    int level;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+        MainMenu();
+    }
+
+    private void Select()
+    {
+                
+    }
+
+    void OnUserInput(string input)
+    
+    {
+        if (input == "1")
+        {
+            level = 1;
+            StartGame(level);
+        }
+        else if (input == "2")
+        {
+            level = 2;
+            StartGame(level);
+        }
+        else if (input == "3")
+        {
+            level = 3;
+            StartGame(level);
+        }
+        else if (input == "menu")
+        {
+            MainMenu();
+        }
+        else if (input == "clear")
+        {
+            Terminal.ClearScreen();
+        }
+        else { Terminal.WriteLine("enter valid level number"); }
+    }
+    
+    void MainMenu() {
+        Terminal.ClearScreen();
+        var greeting = "hello dear player";
+        Terminal.WriteLine(greeting);
+        Terminal.WriteLine("Wellcome to the hack console. ");
+        Terminal.WriteLine("Press 1 to hack library ");
+        Terminal.WriteLine("Press 2 to hack Police ");
+        Terminal.WriteLine("Press 3 to hack NASA");
+        Terminal.WriteLine("Please make your choice");
+
+    }
+    void StartGame(int level) {
+        Terminal.WriteLine("you have chosen level: " + level);
+    }
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
